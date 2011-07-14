@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<h2>Part Type</h2>
+<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Quotation</th>
+	</tr>
+	</thead>
+	<tr>
+		<td><%= @part_type.title %></td>
+		<td><%= @part_type.quotation %></td>
+	</tr>
+</table>
+
+
+<%= link_to 'Edit', edit_part_type_path(@part_type) %> |
+<%= link_to 'Back', part_types_path %>

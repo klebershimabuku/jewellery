@@ -1,0 +1,27 @@
+<h1>Listing Part Types</h1>
+
+<table border='0' cellpadding='10' cellspacing='1'>
+  <tr>
+    <th>Title</th>
+    <th>Quotation</th>
+    <th>Created</th>
+    <th>Last modified at</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @part_types.each do |part_type| %>
+  <tr>
+    <td><%= link_to part_type.title, part_type %></td>
+    <td><%= part_type.quotation.to_s + ' HK$'%></td>
+    <td><%= part_type.created_at.strftime('%Y-%B-%d %H:%M') %></td>
+    <td><%= part_type.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
+    <td><%= link_to 'Edit', edit_part_type_path(part_type) %></td>
+    <td><%= link_to 'Destroy', part_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Part type', new_part_type_path %>
