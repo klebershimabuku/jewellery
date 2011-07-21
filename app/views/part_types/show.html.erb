@@ -1,17 +1,8 @@
 <p id="notice"><%= notice %></p>
-<h2>Part Type</h2>
-<table>
-	<thead>
-	<tr>
-		<th>Title</th>
-		<th>Quotation</th>
-	</tr>
-	</thead>
-	<tr>
-		<td><%= @part_type.title %></td>
-		<td><%= @part_type.quotation %></td>
-	</tr>
-</table>
+
+<h1><%= @part_type.title %></h1>
+
+<h2>Currently Quotation: <span class='current_quotation'><%= @part_type.quotation.to_s + "HK$" %></span></h2>
 
 
 <%= link_to 'Edit', edit_part_type_path(@part_type) %> |

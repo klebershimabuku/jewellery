@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jewellery</title>
-	<%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen' %>
-	<%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
-	<%= stylesheet_link_tag :all, :cache => true %>
+	<title><%= title %></title>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->	
+  <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
+  <%= stylesheet_link_tag 'custom.css', :media => 'screen' %>
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
 	<%= javascript_include_tag :all, :cache => true%>
 	<%= csrf_meta_tag %>
 </head>
 <body>
+
+<div id="header">
+  <div class='logo'>
+    <h1>Feng Shui Jewellery</h1>
+    <h3>The major jewellery in Hong Kong</h3>
+  </div>
+  <div class='nav'>
+    <ul>
+      <li><%= link_to 'Home', home_url %></li>
+      <li><%= link_to 'About', about_url %></li>
+    </ul>
+  </div>
+</div>
+<br />
+<p><%= link_to '← Back to home', root_url if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %></p>
 
 <%= yield %>
 

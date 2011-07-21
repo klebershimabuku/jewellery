@@ -1,3 +1,76 @@
 body {
-	margin: 50px;
+	margin-top: 10px;
+	margin-left: 200px;
+}
+#header {
+	margin-top: -10px;
+	margin-left: -200px;
+	padding-left: 200px;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	background-color: #EFEFEF;
+}
+
+#header .nav {
+	margin-left: -200px;
+	padding-left: 200px;
+	background-color: #000;
+	color: #FFF;
+	position: relative;
+	display: override;
+}
+
+#header .nav a { color: #FFF; }
+
+#header .nav ul {
+	margin-left: -15px;
+}
+#header .nav ul li { 
+    display: inline-block;
+    padding-right: 10px;
+}
+.welcome_msg {
+	margin: 100px;
+	text-align:center;
+}
+.tasks {
+	float: left;
+	position: relative;
+	top: -200px;
+	background-color: #EFEFEF;
+	padding: 20px;
+}
+.tasks h1 { font-size: 16px; }
+
+.tasks ul li {
+	padding-top: 20px;
+}
+
+.default_table {
+	width: 95%;
+	text-align: center;
+	margin: 0 auto;
+	border: 0px solid #000;
+	font-size: 18px;
+	border-spacing: 1pt;
+	background-color: #000;
+}
+.default_table tr td { 
+	background-color: #FFF;
+	padding: 15px;
+}
+.default_table tr th {
+	background-color: #DCF0F7;
+}
+.internal_nav_links {
+	float: right;
+	padding-right: 200px;
+	position: relative;
+	top: -50px;
+}
+
+.current_quotation {
+	background-color: red;
+	color: #fff;
+	padding: 5px;
 }
