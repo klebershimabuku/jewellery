@@ -29,6 +29,9 @@ body {
     display: inline-block;
     padding-right: 10px;
 }
+#contents {
+	margin-right: 100px;
+}
 .welcome_msg {
 	margin: 100px;
 	text-align:center;
@@ -62,13 +65,6 @@ body {
 .default_table tr th {
 	background-color: #DCF0F7;
 }
-.internal_nav_links {
-	float: right;
-	padding-right: 200px;
-	position: relative;
-	top: -50px;
-}
-
 .current_quotation {
 	background-color: red;
 	color: #fff;

@@ -1,4 +1,9 @@
 class PartTypesController < ApplicationController
+  
+  #on_the_spot for in place editing
+  can_edit_on_the_spot
+  
+  
   # GET /part_types
   # GET /part_types.xml
   def index

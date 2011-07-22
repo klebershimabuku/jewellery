@@ -9,15 +9,15 @@
   <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
   <%= stylesheet_link_tag 'custom.css', :media => 'screen' %>
   <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-	<%= javascript_include_tag :all, :cache => true%>
+  <%= javascript_include_tag 'jquery.js', 'application.js' %>
+  <%= javascript_include_tag :on_the_spot %>
 	<%= csrf_meta_tag %>
 </head>
 <body>
 
 <div id="header">
   <div class='logo'>
-    <h1>Feng Shui Jewellery</h1>
-    <h3>The major jewellery in Hong Kong</h3>
+    <h1>KT Jewellery</h1>
   </div>
   <div class='nav'>
     <ul>
@@ -29,7 +29,9 @@
 <br />
 <p><%= link_to '← Back to home', root_url if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %></p>
 
-<%= yield %>
+<div id="contents">
+  <%= yield %>
+</div>
 
 </body>
 </html>

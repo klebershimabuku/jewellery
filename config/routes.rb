@@ -1,5 +1,9 @@
 Jewellery::Application.routes.draw do
-  resources :part_types
+  resources :part_types do
+    collection do
+      put :update_attribute_on_the_spot
+    end
+  end  
 
   get "welcome/index", :as => 'home'
   match "about" => "welcome#about"

@@ -1,26 +1,32 @@
-<div class='internal_nav_links'>
-  <%= link_to 'Create a new Part type', new_part_type_path %>
-</div>
-
 <table class='default_table'>
   <tr><th colspan='5'>Module: Parts Type</th></tr>
   <tr>
-    <th>Title</th>
+    <th>Title + Wastage</th>
     <th>Quotation</th>
     <th>Updated</th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @part_types.each do |part_type| %>
   <tr>
-    <td><%= link_to part_type.title, part_type %></td>
-    <td><%= part_type.quotation.to_s + " HK$" %></td>
+    <td><%= on_the_spot_edit part_type, :title %></td>
+    <td><%= on_the_spot_edit part_type, :quotation %></td>
     <td><%= part_type.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
-    <td><%= link_to 'Edit', edit_part_type_path(part_type) %></td>
     <td><%= link_to 'Destroy', part_type, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+
+
+
+<%= form_for(:part_type, @part_type, :url => { :action => "create" } ) do |f| %>
+  <tr>
+    <td><%= f.text_field :title %></td>
+    <td><%= f.text_field :quotation %></td>
+    <td>-</td>
+    <td><%= f.submit "Create" %></td>
+  </tr>
+<% end %>
+
 </table>
 
 

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def title
-    base_title = "Feng Shui Jewellery"
+    base_title = "KT Jewellery"
     if @title.nil?
       base_title
     else
