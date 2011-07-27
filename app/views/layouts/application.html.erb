@@ -9,28 +9,45 @@
   <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
   <%= stylesheet_link_tag 'custom.css', :media => 'screen' %>
   <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-  <%= javascript_include_tag 'jquery.js', 'application.js' %>
+  <%= javascript_include_tag 'jquery.js', 'application.js', 'jquery_ujs.js' %>
   <%= javascript_include_tag :on_the_spot %>
 	<%= csrf_meta_tag %>
 </head>
 <body>
 
+
 <div id="header">
+<% unless flash.blank? %>
+	<div id="flash"><%= flash_message %></div>
+<% end %>
   <div class='logo'>
     <h1>KT Jewellery</h1>
   </div>
   <div class='nav'>
     <ul>
-      <li><%= link_to 'Home', home_url %></li>
-      <li><%= link_to 'About', about_url %></li>
+      <li><%= link_to t(:home), home_url %></li>
+      <li><%= link_to t(:about), about_url %></li>
     </ul>
   </div>
 </div>
+
+		
 <br />
-<p><%= link_to '← Back to home', root_url if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %></p>
+<p><%= link_to t(:back_to_home), root_url if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %></p>
 
 <div id="contents">
   <%= yield %>
+</div>
+
+<br />
+<hr>
+
+<div id="languages">
+  <p>Choose your language:
+  <%= link_to "English", url_for(:locale => 'en') %>
+  |
+  <%= link_to "Chinese", url_for(:locale => 'cn') %>
+  </p>
 </div>
 
 </body>

@@ -1,0 +1,27 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cn:
+  # Welcome screen
+  welcome_to_kt_jewellery: "歡迎 KT 首飾"
+  
+  # Left side menu tasks
+  what_do_you_want_to_do: "What do you want to do?"
+  manage_part_types: "Manage Part Types"
+  log_in: "Log In"
+  
+  # Navigation bar
+  home: "Home"
+  about: "About"
+  
+  # Generic links
+  back_to_home: "← Back to home"
+  destroy: "Destroy"
+  destroy_confirmation_message: "Are you sure?"
+  btn_create: "Create"
+  
+  # Module: Part Type
+  module_parts_type: "Module: Parts Type"
+  title_plus_wastage: "Title + Wastage"
+  quotation: "Quotation"
+  updated: "Updated"

@@ -1,18 +1,18 @@
 <table class='default_table'>
-  <tr><th colspan='5'>Module: Parts Type</th></tr>
+  <tr><th colspan='5'><%=t :module_parts_type %></th></tr>
   <tr>
-    <th>Title + Wastage</th>
-    <th>Quotation</th>
-    <th>Updated</th>
+    <th><%=t :title_plus_wastage %></th>
+    <th><%=t :quotation %></th>
+    <th><%=t :updated %></th>
     <th></th>
   </tr>
 
 <% @part_types.each do |part_type| %>
   <tr>
     <td><%= on_the_spot_edit part_type, :title %></td>
-    <td><%= on_the_spot_edit part_type, :quotation %></td>
+    <td><%= on_the_spot_edit part_type, :quotation, :display_text => display_current(part_type.quotation), :callback => 'sayhi' %></td>
     <td><%= part_type.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
-    <td><%= link_to 'Destroy', part_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:destroy), part_type, :confirm => t(:destroy_confirmation_message), :method => :delete %></td>
   </tr>
 <% end %>
 
@@ -23,10 +23,8 @@
     <td><%= f.text_field :title %></td>
     <td><%= f.text_field :quotation %></td>
     <td>-</td>
-    <td><%= f.submit "Create" %></td>
+    <td><%= f.submit t(:btn_create) %></td>
   </tr>
 <% end %>
 
 </table>
-
-

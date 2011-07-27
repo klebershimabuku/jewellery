@@ -2,4 +2,33 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  # Welcome screen
+  welcome_to_kt_jewellery: "Welcome to KT Jewellery"
+  
+  # Left side menu tasks
+  what_do_you_want_to_do: "What do you want to do?"
+  manage_part_types: "Manage Part Types"
+  log_in: "Log In"
+  
+  # Navigation bar
+  home: "Home"
+  about: "About"
+  
+  # Generic links
+  back_to_home: "← Back to home"
+  destroy: "Destroy"
+  destroy_confirmation_message: "Are you sure?"
+  btn_create: "Create"
+  
+  # Module: Part Type
+  module_parts_type: "Module: Parts Type"
+  title_plus_wastage: "Title + Wastage"
+  quotation: "Quotation"
+  updated: "Updated"
+  
+  # About page
+  about_contents : |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec dolor ac tellus laoreet ultrices. Sed viverra elit vitae mi vehicula posuere. Morbi at auctor neque. Praesent suscipit eleifend turpis at convallis. Nam consequat elit eget diam ornare non aliquet sapien dapibus. Ut faucibus massa porta nisi consequat et volutpat ante tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus pharetra auctor purus ac gravida. Suspendisse potenti. Donec blandit magna quis diam lacinia aliquet.<br /><br />
+      Pellentesque a nibh urna, vitae pulvinar lacus. Etiam id est vitae neque sagittis vestibulum eu et odio. Cras semper rhoncus leo ut suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante ligula, volutpat viverra vulputate id, feugiat at velit. Aenean dictum nunc id leo ultricies a aliquet urna euismod. Vivamus egestas sem massa, nec venenatis ipsum. Nullam diam tellus, rutrum quis iaculis sit amet, congue interdum elit. Donec viverra tempus est at adipiscing. Maecenas dolor nunc, bibendum at lobortis in, ultricies a justo. Nullam porttitor, erat sit amet vehicula aliquet, orci eros pulvinar sapien, sit amet venenatis elit ipsum non nisl. Morbi non nibh et lacus pharetra posuere. Morbi ullamcorper porta ligula nec vestibulum. Fusce ultricies massa eu quam scelerisque sollicitudin. Donec scelerisque varius est at blandit. Vestibulum dui metus, ornare ut adipiscing pretium, adipiscing a nulla.<br /><br />
+      Mauris laoreet pretium tellus, in aliquet elit rutrum at. Pellentesque aliquet, lacus iaculis auctor iaculis, nibh purus tristique orci, facilisis hendrerit lacus lorem eget lectus. Nam vel urna quis massa faucibus congue. Suspendisse pretium sodales tellus laoreet sodales. Ut ultrices risus at metus hendrerit at dictum dolor porttitor. Nulla id turpis feugiat dolor faucibus laoreet. Sed eros arcu, tristique sed dictum id, tincidunt vel mi. Aenean pulvinar, risus at fringilla adipiscing, orci lectus egestas nisl, quis faucibus diam mi non leo. Donec semper lobortis tincidunt. Ut malesuada egestas tortor quis tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna mi, lacinia id malesuada et, viverra suscipit lorem. Curabitur facilisis pellentesque convallis. Fusce posuere faucibus orci, et blandit dui mattis vitae. Nam malesuada, lorem non iaculis tempor, tellus enim sagittis augue, et condimentum ante arcu ut mi. Proin luctus tellus at eros consequat pulvinar.<br /><br />
+      Pellentesque in tellus sem. Pellentesque vitae est nisl. Donec condimentum ligula ut tellus cursus quis eleifend mauris feugiat. Suspendisse rhoncus egestas dolor nec tincidunt. Donec vel risus id mi tincidunt interdum. Suspendisse massa velit, tincidunt et pretium vitae, lacinia sed libero. Praesent posuere purus id urna porttitor interdum. Morbi et urna erat. Praesent placerat, leo id eleifend ullamcorper, lacus turpis dignissim ante, ut pretium ipsum nibh eu enim. Vivamus dignissim semper dolor, ac ullamcorper urna elementum at. Nulla vitae libero ipsum, eget tempor nunc. Phasellus tempor, dolor sit amet convallis placerat, ligula libero pellentesque elit, ullamcorper posuere sapien massa et lorem. Nam fermentum ligula id lorem consequat rutrum eget eget dolor. Mauris ac turpis et justo pretium interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis tortor nec lacus malesuada congue malesuada lacus dapibus. Donec iaculis malesuada libero sed tincidunt. Maecenas nulla nisi, ultrices in egestas quis, venenatis vitae justo. Duis feugiat cursus urna quis suscipit.Nulla at ligula velit, in consectetur lorem. Vestibulum eu eros eget urna placerat pellentesque sed quis dui. Morbi consequat nunc in lorem pharetra in accumsan nibh dignissim. Vivamus adipiscing sapien sed tortor condimentum facilisis. Etiam non dui eget mauris iaculis tincidunt et a leo. Curabitur nec magna lectus. Nunc suscipit euismod bibendum. Nunc quis dui in leo convallis malesuada. Aenean molestie iaculis porta. Mauris id est tortor. Morbi ultricies, quam vitae laoreet ultricies, ligula nulla tempor purus, eget rhoncus lorem sapien eu mi. Proin rutrum mollis luctus. Aenean vel felis odio, quis egestas erat. Morbi arcu justo, lacinia sed interdum sit amet, egestas cursus diam. Nunc eu euismod ante. Nam augue dolor, eleifend id accumsan eget, laoreet quis tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam pulvinar mi ac lorem rhoncus id luctus tortor facilisis. Fusce ullamcorper ipsum id orci molestie a convallis nisl semper. Cras eget nibh id metus bibendum pulvinar ut porttitor sapien.<br /><br />

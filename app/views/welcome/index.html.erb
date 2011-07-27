@@ -1,12 +1,12 @@
 <div class='welcome_msg'>
-  <h1>Welcome to KT Jewellery</h1>
+  <h1><%=t :welcome_to_kt_jewellery %></h1>
 </div>
 
 <div class='tasks'>
-  <h1>What do you want to do?</h1>
+  <h1><%=t :what_do_you_want_to_do %></h1>
   <hr>
   <ul>
-    <li><%= link_to 'Manage part types', part_types_url %></li>
-    <li>Log In</li>
+    <li><%= link_to t(:manage_part_types), part_types_url %></li>
+    <li><%=t :log_in %></li>
   </ul>
 </div>

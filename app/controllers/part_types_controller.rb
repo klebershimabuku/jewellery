@@ -49,7 +49,7 @@ class PartTypesController < ApplicationController
 
     respond_to do |format|
       if @part_type.save
-        format.html { redirect_to(@part_type, :notice => 'Part type was successfully created.') }
+        format.html { redirect_to(part_types_url, :notice => 'Part type was successfully created.') }
         format.xml  { render :xml => @part_type, :status => :created, :location => @part_type }
       else
         format.html { render :action => "new" }
@@ -81,7 +81,7 @@ class PartTypesController < ApplicationController
     @part_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to(part_types_url) }
+      format.html { redirect_to(part_types_url, :notice => 'Part type was successfully deleted.') }
       format.xml  { head :ok }
     end
   end
