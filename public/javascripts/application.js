@@ -3,3 +3,7 @@
 function sayhi() {
 	alert('TODO: update the modified datetime..');
 }
+
+function reload() {
+	location.reload();
+}

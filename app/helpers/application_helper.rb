@@ -17,7 +17,11 @@ module ApplicationHelper
   end
     
   def display_current(quotation)
-    number_to_currency(quotation, :precision => 2, :unit => '').to_s
+    if quotation.present?
+      number_to_currency(quotation, :precision => 2, :unit => '').to_s
+    else
+      "--"
+    end
   end
   
   def flash_message
@@ -28,6 +32,14 @@ module ApplicationHelper
           end
       }
       messages
+  end
+  
+  def show_dashes_for_none(value)
+    if value == "None"
+      "--"
+    else
+      value
+    end
   end
     
 end

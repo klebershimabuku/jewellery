@@ -58,7 +58,7 @@ body {
 	border-spacing: 1pt;
 	background-color: #000;
 }
-.default_table tr td { 
+#custom_table .default_table tr td { 
 	background-color: #FFF;
 	padding: 15px;
 }
@@ -85,3 +85,7 @@ body {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
+.align_to_right { text-align: right;}
+.align_to_left { text-align: left; }
+.align_to_center { text-align: center; }
+.clear { clear: both; }

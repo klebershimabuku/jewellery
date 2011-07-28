@@ -1,3 +1,4 @@
+<div id="custom_table">
 <table class='default_table'>
   <tr><th colspan='5'><%=t :module_parts_type %></th></tr>
   <tr>
@@ -12,7 +13,7 @@
     <td><%= on_the_spot_edit part_type, :title %></td>
     <td><%= on_the_spot_edit part_type, :quotation, :display_text => display_current(part_type.quotation), :callback => 'sayhi' %></td>
     <td><%= part_type.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
-    <td><%= link_to t(:destroy), part_type, :confirm => t(:destroy_confirmation_message), :method => :delete %></td>
+    <td><%= button_to t(:destroy), part_type, :confirm => t(:destroy_confirmation_message), :method => :delete %></td>
   </tr>
 <% end %>
 
@@ -28,3 +29,4 @@
 <% end %>
 
 </table>
+</div>

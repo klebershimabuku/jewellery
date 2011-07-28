@@ -8,6 +8,7 @@ en:
   # Left side menu tasks
   what_do_you_want_to_do: "What do you want to do?"
   manage_part_types: "Manage Part Types"
+  manage_parts: "Manage Parts"
   log_in: "Log In"
   
   # Navigation bar
@@ -19,12 +20,18 @@ en:
   destroy: "Destroy"
   destroy_confirmation_message: "Are you sure?"
   btn_create: "Create"
+  btn_add: "+ Add"
   
   # Module: Part Type
   module_parts_type: "Module: Parts Type"
   title_plus_wastage: "Title + Wastage"
   quotation: "Quotation"
   updated: "Updated"
+  
+  # Module: Parts
+  module_parts: "Module: Parts"
+  no_parts_found: "Ops! There are no parts yet. Maybe you wish to "
+  start_adding: "start adding one"
   
   # About page
   about_contents : |

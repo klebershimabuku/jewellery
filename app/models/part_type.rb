@@ -1,4 +1,5 @@
 class PartType < ActiveRecord::Base
+  belongs_to :parts
   before_validation :fix_quotation, :if => :quotation_changed?
   
   protected

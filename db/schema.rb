@@ -10,13 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110724141959) do
+ActiveRecord::Schema.define(:version => 20110728081249) do
 
   create_table "part_types", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "quotation",  :precision => 8, :scale => 2
+  end
+
+  create_table "parts", :force => true do |t|
+    t.string   "title",                                      :null => false
+    t.integer  "part_type_id",                               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "set",          :precision => 8, :scale => 2
+    t.decimal  "price",        :precision => 8, :scale => 2
   end
 
 end
