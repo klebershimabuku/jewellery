@@ -17,9 +17,9 @@
 
 
 <div id="header">
-<% unless flash.blank? %>
-	<div id="flash"><%= flash_message %></div>
-<% end %>
+<% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
   <div class='logo'>
     <h1>KT Jewellery</h1>
   </div>
