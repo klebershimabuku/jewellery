@@ -1,0 +1,27 @@
+<div id="custom_table">
+<table class="default_table">
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Labour cost</th>
+    <th>Item type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.title %></td>
+    <td><%= item.price %></td>
+    <td><%= item.labour_cost %></td>
+    <td><%= on_the_spot_edit item, :item_type_id, :type => :select, :data => @item_types.collect { |p| [p.id, show_dashes_for_none(p.title) ] }, :callback => 'reload' %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<%= link_to '+add', new_item_path %>

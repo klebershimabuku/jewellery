@@ -1,6 +1,6 @@
 Jewellery::Application.routes.draw do
 
-  resources :parts, :item_types do
+  resources :parts, :item_types, :items do
     collection do
       put :update_attribute_on_the_spot
     end

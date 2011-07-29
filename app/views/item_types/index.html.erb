@@ -19,7 +19,7 @@
     </tr>
     <% end %>
     
-    <%= form_for(:item_type, @item_type, :url => { :action => 'create'}) do |f| %>
+    <%= form_for(@item_type, :as => :item_type, :url => { :action => 'create'}) do |f| %>
       <tr>
         <td><%= f.text_field :title %>
         <%= button_for "Save Item Type", :class => 'float_to_right positive pill button', :button_type => 'submit' %></td>

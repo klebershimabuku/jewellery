@@ -98,3 +98,7 @@ body {
 .align_to_left { text-align: left; }
 .align_to_center { text-align: center; }
 .clear { clear: both; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}

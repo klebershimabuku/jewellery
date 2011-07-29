@@ -1,5 +1,7 @@
 class Part < ActiveRecord::Base
   has_one :part_type
+  has_many :item_parts
+  has_many :items, :through => :item_parts
   before_validation :fix_set, :if => :set_changed?
   before_validation :fix_price, :if => :price_changed?
   
