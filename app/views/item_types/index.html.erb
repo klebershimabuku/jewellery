@@ -1,17 +1,16 @@
 <div id="custom_table">
-  <table class="default_table">
+  <table class="default_table" style="width: 30%">
     <tr>
-      <th colspan="2"><%=t :module_items_types %></th>
+      <th><%=t :module_items_types %></th>
     </tr>
     <% if @item_types.present? %>
     <tr>
       <th>Title</th>
-      <th></th>
     </tr>
     <% @item_types.each do |item_type| %>
     <tr>
-      <td><%= on_the_spot_edit item_type, :title %></td>
-      <td><%= link_to 'Destroy', item_type, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= on_the_spot_edit item_type, :title %>
+      <%= link_to 'Destroy', item_type, :confirm => 'Are you sure?', :method => :delete, :class => 'float_to_right negative pill button' %></td>
     </tr>
     <% end %>
     <% else %>
@@ -22,8 +21,8 @@
     
     <%= form_for(:item_type, @item_type, :url => { :action => 'create'}) do |f| %>
       <tr>
-        <td><%= f.text_field :title %></td>
-        <td><%= f.submit %></td>
+        <td><%= f.text_field :title %>
+        <%= button_for "Save Item Type", :class => 'float_to_right positive pill button', :button_type => 'submit' %></td>
       </tr>
     <% end %>
     
