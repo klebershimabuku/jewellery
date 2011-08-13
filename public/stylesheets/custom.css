@@ -109,12 +109,12 @@ table tr td {
 div.field, div.actions {
   margin-bottom: 10px;
 }
-.price, .amount {
-	border: 1px solid #CCC;
+.price {
 	width: 100px;
 	padding: 2px;
 	font-size: 1.5em;
 }
+.amount { font-size:1.5em;margin-right: 15px; }
 #languages {
 	text-align: center;
 	padding: 40px;
@@ -142,7 +142,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=url]:focus, input
 select {background-color:#fff;border-width:1px;border-style:solid;padding: 8px;font-size: 1.5em;}
 label {font-weight:bold;font-size:1.2em;}
 fieldset {padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
-legend {font-weight:bold;font-size:1.2em;margin-top:-0.2em;margin-bottom:1em;}
+legend {font-weight:normal;font-size:1.8em;margin-top:-0.2em;margin-bottom:1em;}
 fieldset, #IE8#HACK {padding-top:1.4em;}
 legend, #IE8#HACK {margin-top:0;margin-bottom:0;}
 

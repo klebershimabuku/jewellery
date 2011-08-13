@@ -9,6 +9,7 @@ Jewellery::Application.routes.draw do
   resources :items do
     collection do
       put :update_attribute_on_the_spot
+      get :autocomplete_part_title
     end
   end
 

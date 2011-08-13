@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
+
   #on_the_spot for in place editing
   can_edit_on_the_spot  
+  
+  autocomplete :part, :title
   
   # GET /items
   # GET /items.xml

@@ -17,7 +17,9 @@ function remove_fields(link) {
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
-  var regexp = new RegExp("new_" + association, "g")
+  var regexp = new RegExp("new_" + association, "g");
+
+
   // check for the existence 
   if ($("tr.individual_part").length) {
      $('tr.individual_part:last').after(content.replace(regexp, new_id));
@@ -25,6 +27,13 @@ function add_fields(link, association, content) {
   else {
      $("#parts_table").find("tr.attributes").after(content.replace(regexp, new_id));
   }
+
+	  $(".autocomplete").each(function() {
+			random_id = Math.floor(Math.random()*1000);
+			$(this).attr("id", "autocomplete_" + random_id);
+			$(this).prev().attr("data-id-element", "#autocomplete_" + random_id);
+	});
+
 }
 
 function load_part_price_select(id, value) {
@@ -54,7 +63,34 @@ jQuery(function($) {
 
 		setTimeout(function() {
 		  $("#recalc").trigger('click');	
+		
+		  $(".autocomplete").each(function() {
+			new_id = Math.floor(Math.random()*1000);
+			$(this).attr("id", "autocomplete_" + new_id);
+			$(this).prev().attr("data-id-element", "#autocomplete_" + new_id);
+		});
+		
 		},10);
+		
+		$("input[data-id-element^=#autocomplete]").live("blur", function(ev) {
+			ev.preventDefault();
+			value = $(this).nextAll("input").val();
+			if (value == '') {
+				$(this).focus();
+			}
+		    $.ajax({
+			  url: '/parts/' + value + '/price',
+			  type: 'get',
+			  context: this,
+			  dataType: 'script',
+			  success: function(responseData) {
+			    // alert('success: ' + responseData);	
+			    $(this).parent().nextAll("td.price:first").html(Number(responseData).toFixed(2) ).effect("highlight", {}, 3000);
+			  }
+			});	
+			
+		});
+		
 		
 		// Fills up automatically the amount when user clicks out the quantity
 		// for each attached part item considering the unit price 
@@ -94,13 +130,16 @@ jQuery(function($) {
 		$("#recalc").click(function() {
 			var subtotal = 0;
 			var total = 0;
-			$('select[id^=item_item_parts] option:selected').each(function () {
+			
+			$('input[data-id-element^=#autocomplete]').each(function () {
 				
 				// setting values to variables (unit_price, quantity and visible)
 				unit_price = $(this).parents("tr").find("td.price").text();
-				quantity = $(this).parents("tr").find("input.quantity").val();
-				visible = $(this).closest("tr").is(":visible");
 				
+				
+				quantity = $(this).parents("tr").find("input.quantity").val();
+				
+				visible = $(this).closest("tr").is(":visible");
 				// do some math ONLY if the part is visible to the parts list.
 				if (visible) {
 					amount = unit_price * quantity;
@@ -109,16 +148,17 @@ jQuery(function($) {
 				else {
 					amount = 0;
 				}
-				
-				$(this).parents("tr").find("td.amount").html(amount);
+				$(this).parent().siblings("td.amount").html(amount);
 				subtotal = parseFloat(subtotal) + parseFloat(amount);
 			});
 
 			labour_cost = $("#item_essentials").find("input[type=text]:last").val(); // get the value of the user typed labour cost
 			labout_cost = Number(labour_cost).toFixed(2);
 			
+			
 			total = parseFloat(subtotal) + parseFloat(labour_cost); // do some math
 			total = Number(total).toFixed(2); // format the total value to display only 2 decimals digits
+			
 
 			$('.labour_cost').html(labour_cost);
 			

@@ -8,6 +8,7 @@ gem 'rails', '3.0.9'
 gem 'mysql2', '~> 0.2.6'
 gem 'jquery-rails', '~> 1.0.12'
 gem 'on_the_spot'
+gem 'rails3-jquery-autocomplete' , '~> 0.9.1'
 
 group :development, :test do
   gem 'webrat'

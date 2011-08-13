@@ -2,9 +2,16 @@
   <td>
     <%= f.hidden_field :_destroy %>
     <%= link_to_remove_fields "X remove", f %>&nbsp;
-    <%= f.collection_select(:part_id, @parts, :id, :title, { :prompt => true } , { :onchange => "load_part_price_select(this.id, this.options[this.selectedIndex].value);"  } ) %>
+    <%# f.collection_select(:part_id, @parts, :id, :title, { :prompt => true } , { :onchange => "load_part_price_select(this.id, this.options[this.selectedIndex].value);"  } ) %>
+
+    <% if !f.object.part.blank? %>
+    <%= f.autocomplete_field :autocomplete_part_id, autocomplete_part_title_items_path , :id_element => "#autocomplete", :value => "#{f.object.part.title}" %>
+    <% else %>    
+    <%= f.autocomplete_field :autocomplete_part_id, autocomplete_part_title_items_path , :id_element => "#autocomplete" %>
+    <% end %>
+    <%= f.hidden_field :part_id, :id => "autocomplete", :class => 'autocomplete' %>
   </td>
-  <td class="price"><%=  display_current(f.object.part.price) unless f.object.part.blank? %></td>
-  <td><%= f.text_field :quantity , :size => 5, :class => "quantity" %></td>
+  <td class="price align_to_center"><%=  display_current(f.object.part.price) unless f.object.part.blank? %></td>
+  <td class="align_to_center"><%= f.text_field :quantity , :size => 5, :class => "quantity" %></td>
   <td class="amount align_to_right">0</td>
 </tr>  
