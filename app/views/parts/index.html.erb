@@ -1,8 +1,12 @@
+<div class='nav_buttons'>
+  <%= link_to t(:back_to_home), root_path, :class => 'left button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
+  <%= link_to t(:btn_goto_parts_root), parts_path, :class => 'middle button' %>
+  <%= link_to t(:btn_add), new_part_path, :class => 'positive right button' %>
+</div>
+
+
 <div id="custom_table">
 <table class='default_table'>
-  <tr>
-    <th colspan='6' class='align_to_right'><%= link_to t(:btn_add), new_part_path %></th>
-  </tr>
   <tr>
     <th colspan='6'><%=t :module_parts %></th>
   </tr>
@@ -22,7 +26,7 @@
     <td><%= on_the_spot_edit part, :price, :display_text => display_current(part.price), :callback => 'reload' %></td>
     <td><%= on_the_spot_edit part, :part_type_id, :type => :select, :data => @part_types.collect { |p| [p.id, show_dashes_for_none(p.title) ] }, :callback => 'reload' %></td>
     <td><%= part.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
-    <td><%= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete, :class => 'negative pill button' %></td>
   </tr>
 <% end %>
 <% else %>

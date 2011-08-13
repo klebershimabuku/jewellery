@@ -1,0 +1,10 @@
+<tr class='individual_part'>
+  <td>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to_remove_fields "X remove", f %>&nbsp;
+    <%= f.collection_select(:part_id, @parts, :id, :title, { :prompt => true } , { :onchange => "load_part_price_select(this.id, this.options[this.selectedIndex].value);"  } ) %>
+  </td>
+  <td class="price"><%=  display_current(f.object.part.price) unless f.object.part.blank? %></td>
+  <td><%= f.text_field :quantity , :size => 5, :class => "quantity" %></td>
+  <td class="amount align_to_right">0</td>
+</tr>  

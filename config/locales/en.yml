@@ -19,6 +19,7 @@ en:
   
   # Generic links and texts
   back_to_home: "← Back to home"
+  back_to_items: "← Back to Items"
   destroy: "Destroy"
   destroy_confirmation_message: "Are you sure?"
   btn_create: "Create"
@@ -34,10 +35,17 @@ en:
   # Module: Parts
   module_parts: "Module: Parts"
   no_parts_found: "Ops! There are no parts yet. Maybe you wish to "
+  btn_goto_parts_root: "Go to Parts Listing"
   
   # Module: Items Types
   module_items_types: "Module: Items Types"
-  no_items_found: "Ops! There are no item type yet. Maybe you wish to "
+  no_item_type_found: "Ops! There are no item type yet. Maybe you wish to "
+  
+  # Module: Items
+  module_items: "Module: Items"
+  no_item_found: "Ops! There are no item created yet. Maybe you wish to "
+  btn_goto_items_root: "Go to Items Listing"
+
   
   # About page
   about_contents : |

@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
-
   #on_the_spot for in place editing
-  can_edit_on_the_spot
-
+  can_edit_on_the_spot  
+  
   # GET /items
   # GET /items.xml
   def index
@@ -30,7 +29,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item_types = ItemType.all
-
+    @parts = Part.all
+    2.times { @item.item_parts.build }
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @item }
@@ -64,10 +64,12 @@ class ItemsController < ApplicationController
   # PUT /items/1.xml
   def update
     @item = Item.find(params[:id])
+    @item_types = ItemType.all
+    @parts = Part.all
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
+        format.html { redirect_to(items_path, :notice => 'Item was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -87,4 +89,5 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

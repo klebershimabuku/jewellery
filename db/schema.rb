@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729064644) do
+ActiveRecord::Schema.define(:version => 20110811113854) do
 
   create_table "item_parts", :force => true do |t|
     t.integer  "item_id"
     t.integer  "part_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   create_table "item_types", :force => true do |t|

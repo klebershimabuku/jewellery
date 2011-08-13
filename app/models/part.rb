@@ -2,9 +2,11 @@ class Part < ActiveRecord::Base
   has_one :part_type
   has_many :item_parts
   has_many :items, :through => :item_parts
+  accepts_nested_attributes_for :item_parts, :allow_destroy => true
+
   before_validation :fix_set, :if => :set_changed?
   before_validation :fix_price, :if => :price_changed?
-  
+    
   protected
     def fix_set
       if self[:set].nil?

@@ -1,5 +1,19 @@
+<div class='nav_buttons'>
+  <%= link_to t(:back_to_home), root_path, :class => 'left button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
+  <%= link_to t(:btn_goto_items_root), items_path, :class => 'middle button' %>
+  <%= link_to t(:btn_add), new_item_path, :class => 'positive right button' %>
+</div>
+
+
 <div id="custom_table">
-<table class="default_table">
+  <table class="default_table">
+  <tr>
+    <th colspan='6'><%=t :module_items %></th>
+  </tr>
+  
+  
+  <% unless @items.blank? %>
+
   <tr>
     <th>Title</th>
     <th>Price</th>
@@ -7,21 +21,28 @@
     <th>Item type</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
-<% @items.each do |item| %>
+  <% @items.each do |item| %>
   <tr>
-    <td><%= item.title %></td>
-    <td><%= item.price %></td>
-    <td><%= item.labour_cost %></td>
+    <td><%= on_the_spot_edit item, :title %></td>
+    <td><%= display_current(item.price) %></td>
+    <td><%= on_the_spot_edit item, :labour_cost, :display_text => display_current(item.labour_cost) %></td>
     <td><%= on_the_spot_edit item, :item_type_id, :type => :select, :data => @item_types.collect { |p| [p.id, show_dashes_for_none(p.title) ] }, :callback => 'reload' %></td>
-    <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-<% end %>
-</table>
-</div>
+  <% end %>
+  
+  <% else %>
 
-<%= link_to '+add', new_item_path %>
+  <tr>
+    <td><%=t :no_item_found %><%= link_to t(:start_adding), new_item_path %></td>
+  </tr>
+
+
+  <% end %>
+  
+  </table>
+  </div>
+
