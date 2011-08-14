@@ -7,7 +7,7 @@
   <![endif]-->	
   <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen' %>
   <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
-  <%= stylesheet_link_tag 'custom.css', :media => 'screen' %>
+  <%= stylesheet_link_tag 'custom.css', 'css3buttons.css', :media => 'screen' %>
   <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
   <%= javascript_include_tag 'jquery.js', 'application.js', 'jquery_ujs.js' %>
   <%= javascript_include_tag :on_the_spot %>
@@ -17,9 +17,9 @@
 
 
 <div id="header">
-<% unless flash.blank? %>
-	<div id="flash"><%= flash_message %></div>
-<% end %>
+<% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
   <div class='logo'>
     <h1>KT Jewellery</h1>
   </div>

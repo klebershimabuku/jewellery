@@ -13,7 +13,7 @@
     <td><%= on_the_spot_edit part_type, :title %></td>
     <td><%= on_the_spot_edit part_type, :quotation, :display_text => display_current(part_type.quotation), :callback => 'sayhi' %></td>
     <td><%= part_type.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
-    <td><%= button_to t(:destroy), part_type, :confirm => t(:destroy_confirmation_message), :method => :delete %></td>
+    <td><%= link_to t(:destroy), part_type, :confirm => t(:destroy_confirmation_message), :method => :delete, :class => 'negative pill button' %></td>
   </tr>
 <% end %>
 
@@ -24,7 +24,7 @@
     <td><%= f.text_field :title %></td>
     <td><%= f.text_field :quotation %></td>
     <td>-</td>
-    <td><%= f.submit t(:btn_create) %></td>
+    <td><%= button_for t(:btn_create), :class => 'positive pill button', :button_type => 'submit' %></td>
   </tr>
 <% end %>
 

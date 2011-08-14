@@ -9,18 +9,20 @@ en:
   what_do_you_want_to_do: "What do you want to do?"
   manage_part_types: "Manage Part Types"
   manage_parts: "Manage Parts"
+  manage_items_parts: "Manage Items Parts"
   log_in: "Log In"
   
   # Navigation bar
   home: "Home"
   about: "About"
   
-  # Generic links
+  # Generic links and texts
   back_to_home: "← Back to home"
   destroy: "Destroy"
   destroy_confirmation_message: "Are you sure?"
   btn_create: "Create"
   btn_add: "+ Add"
+  start_adding: "start adding one"
   
   # Module: Part Type
   module_parts_type: "Module: Parts Type"
@@ -31,7 +33,10 @@ en:
   # Module: Parts
   module_parts: "Module: Parts"
   no_parts_found: "Ops! There are no parts yet. Maybe you wish to "
-  start_adding: "start adding one"
+  
+  # Module: Items Types
+  module_items_types: "Module: Items Types"
+  no_items_found: "Ops! There are no item type yet. Maybe you wish to "
   
   # About page
   about_contents : |

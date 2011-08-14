@@ -24,22 +24,16 @@ module ApplicationHelper
     end
   end
   
-  def flash_message
-      messages = ""
-      [:notice, :info, :warning, :error, :alert].each {|type|
-          if flash[type]
-              messages += "#{flash[type]}"
-          end
-      }
-      messages
-  end
-  
   def show_dashes_for_none(value)
     if value == "None"
       "--"
     else
       value
     end
+  end
+  
+  def button_for(name, options={})
+      return content_tag(:button, content_tag(:span, content_tag(:span, name)), :class => options[:class], :type => options[:button_type])
   end
     
 end
