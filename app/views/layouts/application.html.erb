@@ -23,7 +23,22 @@
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <% end %>
     <div class='logo'>
-      <h1>KT Jewellery</h1>
+      <table>
+        <tr>
+          <td class="align_to_left"><h1>KT Jewellery</h1></td>
+          <td class="align_to_right">
+          
+          <%= form_tag search_items_path, :method => 'get' do %>
+            <%= text_field_tag :q , params[:q] %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+          
+          
+          </td>
+          
+        </tr>
+      </table>
+      
     </div>
     <div class='nav'>
       <ul>

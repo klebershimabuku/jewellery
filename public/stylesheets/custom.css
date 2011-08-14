@@ -10,7 +10,6 @@ body {
 	padding-left: 200px;
 	padding-top: 10px;
 	padding-bottom: 0px;
-	background-color: #EFEFEF;
 }
 
 #header .nav {
@@ -20,8 +19,13 @@ body {
 	color: #FFF;
 	position: relative;
 	display: override;
+	font-size: 1.7em;
+	
 }
 
+.logo { 
+	margin-right: 100px; 
+}
 #header .nav a { color: #FFF; }
 
 #header .nav ul {
@@ -31,8 +35,15 @@ body {
     display: inline-block;
     padding-right: 10px;
 }
+#search {
+	float: right;
+}
 #contents {
 	margin-right: 100px;
+}
+#search_results li {
+	font-size: 1.8em;
+	padding: 10px;
 }
 .welcome_msg {
 	margin: 100px;
@@ -49,6 +60,7 @@ body {
 	top: -200px;
 	background-color: #EFEFEF;
 	padding: 20px;
+	font-size: 1.7em;
 }
 .tasks h1 { font-size: 16px; }
 
@@ -57,7 +69,7 @@ body {
 }
 
 .default_table {
-	width: 95%;
+	width: 100%;
 	text-align: center;
 	margin: 0 auto;
 	border: 0px solid #ccc;
