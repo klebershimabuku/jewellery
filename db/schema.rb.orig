@@ -12,6 +12,9 @@
 
 <<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110814075613) do
+=======
+ActiveRecord::Schema.define(:version => 20110811113854) do
+>>>>>>> item_module
 
   create_table "item_parts", :force => true do |t|
     t.integer  "item_id"
@@ -20,9 +23,6 @@ ActiveRecord::Schema.define(:version => 20110814075613) do
     t.datetime "updated_at"
     t.integer  "quantity"
   end
-=======
-ActiveRecord::Schema.define(:version => 20110728114823) do
->>>>>>> itemstypesmodule
 
   create_table "item_types", :force => true do |t|
     t.string   "title"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20110728114823) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "items", :force => true do |t|
     t.string   "title"
     t.decimal  "price",        :precision => 8, :scale => 2
@@ -39,12 +38,6 @@ ActiveRecord::Schema.define(:version => 20110728114823) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo"
-=======
-  create_table "items_types", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
->>>>>>> itemstypesmodule
   end
 
   create_table "part_types", :force => true do |t|
