@@ -18,7 +18,7 @@ module ApplicationHelper
     
   def display_current(quotation)
     if quotation.present?
-      number_to_currency(quotation, :precision => 2, :unit => '').to_s
+      number_to_currency(quotation, :precision => 2, :unit => '', :delimiter => '').to_s
     else
       "--"
     end
