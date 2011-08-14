@@ -7,48 +7,38 @@
   <![endif]-->	
   <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen' %>
   <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
-  <%= stylesheet_link_tag 'custom.css', 'css3buttons.css', :media => 'screen' %>
+  <%= stylesheet_link_tag 'custom.css', 'css3buttons.css', 'jquery-ui-1.8.14.custom.css', :media => 'screen' %>
   <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-  <%= javascript_include_tag 'jquery.js', 'application.js', 'jquery_ujs.js' %>
+  <%= javascript_include_tag 'jquery.js', 'application.js', 'jquery_ujs.js','jquery-ui-1.8.15.custom.min.js','autocomplete-rails.js' %>
   <%= javascript_include_tag :on_the_spot %>
 	<%= csrf_meta_tag %>
 </head>
 <body>
 
-
-<div id="header">
-<% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-  <div class='logo'>
-    <h1>KT Jewellery</h1>
+<div id="container">
+  <div id="header">
+  <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+    <div class='logo'>
+      <h1>KT Jewellery</h1>
+    </div>
+    <div class='nav'>
+      <ul>
+        <li><%= link_to t(:home), home_url %></li>
+        <li><%= link_to t(:about), about_url %></li>
+      </ul>
+    </div>
   </div>
-  <div class='nav'>
-    <ul>
-      <li><%= link_to t(:home), home_url %></li>
-      <li><%= link_to t(:about), about_url %></li>
-    </ul>
+  <div id="contents">
+    <%= yield %>
   </div>
-</div>
-
-		
-<br />
-<p><%= link_to t(:back_to_home), root_url if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %></p>
-
-<div id="contents">
-  <%= yield %>
-</div>
-
-<br />
-<hr>
-
-<div id="languages">
-  <p>Choose your language:
-  <%= link_to "English", url_for(:locale => 'en') %>
-  |
-  <%= link_to "Chinese", url_for(:locale => 'cn') %>
-  </p>
-</div>
-
+  <div id="languages">
+    <p>Choose your language:
+    <%= link_to "English", url_for(:locale => 'en') %>
+    |
+    <%= link_to "Chinese", url_for(:locale => 'cn') %>
+    </p>
+  </div>
 </body>
 </html>

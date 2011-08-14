@@ -1,6 +1,8 @@
 body {
 	margin-top: 10px;
 	margin-left: 200px;
+	font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	
 }
 #header {
 	margin-top: -10px;
@@ -36,6 +38,11 @@ body {
 	margin: 100px;
 	text-align:center;
 }
+.nav_buttons {
+	margin:0 auto;
+	text-align: center;
+	margin-bottom: 30px;
+}
 .tasks {
 	float: left;
 	position: relative;
@@ -53,18 +60,18 @@ body {
 	width: 95%;
 	text-align: center;
 	margin: 0 auto;
-	border: 0px solid #000;
-	font-size: 18px;
+	border: 0px solid #ccc;
+	font-size: 16px;
 	border-spacing: 1pt;
-	background-color: #000;
+	background-color: #ccc;
+	margin-bottom: 30px;
 }
-#custom_table .default_table tr td { 
+table tr td { 
 	background-color: #FFF;
-	padding: 15px;
+	padding: 10px;
 }
-.default_table tr th {
-	background-color: #DCF0F7;
-}
+.default_table tr th { background-color: #DCF0F7; }
+
 .current_quotation {
 	background-color: red;
 	color: #fff;
@@ -98,3 +105,45 @@ body {
 .align_to_left { text-align: left; }
 .align_to_center { text-align: center; }
 .clear { clear: both; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+.price {
+	width: 100px;
+	padding: 2px;
+	font-size: 1.5em;
+}
+.amount { font-size:1.5em;margin-right: 15px; }
+#languages {
+	text-align: center;
+	padding: 40px;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  color: white;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+/* forms */
+
+input[type=text], input[type=password], input[type=url], input[type=email], input.text, input.title, textarea { padding: 8px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 1.5em;}
+input[type=text]:focus, input[type=password]:focus, input[type=url]:focus, input[type=email]:focus, input.text:focus, input.title:focus, textarea:focus {border-color:#666; background-color:lightyellow;}
+select {background-color:#fff;border-width:1px;border-style:solid;padding: 8px;font-size: 1.5em;}
+label {font-weight:bold;font-size:1.2em;}
+fieldset {padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
+legend {font-weight:normal;font-size:1.8em;margin-top:-0.2em;margin-bottom:1em;}
+fieldset, #IE8#HACK {padding-top:1.4em;}
+legend, #IE8#HACK {margin-top:0;margin-bottom:0;}
+
+.red { background-color: red; }

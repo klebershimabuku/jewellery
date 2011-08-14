@@ -1,15 +1,18 @@
 class PartsController < ApplicationController
   #on_the_spot for in place editing
-  can_edit_on_the_spot  # GET /parts
+  helper :all
   
+  can_edit_on_the_spot  # GET /parts
+    
   # GET /parts.xml
   def index
-    @parts = Part.all
     @part_types = PartType.all
-
+    @parts = Part.all
+  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @parts }
+      format.js
     end
   end
 
@@ -83,4 +86,12 @@ class PartsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def price
+    @price = Part.find(params[:id])
+    respond_to do |format|
+      format.js { render :text => @price.price }
+    end
+  end
+  
 end

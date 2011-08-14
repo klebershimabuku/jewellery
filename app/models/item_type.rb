@@ -1,3 +1,3 @@
 class ItemType < ActiveRecord::Base
-  validates_presence_of :title
+  has_one :item, :dependent => :destroy
 end

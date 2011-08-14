@@ -1,0 +1,21 @@
+<h2>
+  <%= @item.title %>
+</h2>
+
+<p>
+  <b>Price:</b>
+  <%= @item.price %>
+</p>
+
+<p>
+  <b>Labour cost:</b>
+  <%= @item.labour_cost %>
+</p>
+
+<p>
+  <b>Item type:</b>
+  <%=@item.item_type.title %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

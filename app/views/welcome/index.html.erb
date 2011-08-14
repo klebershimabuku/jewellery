@@ -6,9 +6,10 @@
   <h1><%=t :what_do_you_want_to_do %></h1>
   <hr>
   <ul>
-    <li><%= link_to t(:manage_part_types), part_types_url %></li>
-    <li><%= link_to t(:manage_parts), parts_url %></li>
-    <li><%= link_to t(:manage_items_types), item_types_url %></li>
+    <li><%= link_to t(:manage_part_types), part_types_path %></li>
+    <li><%= link_to t(:manage_parts), parts_path %></li>
+    <li><%= link_to t(:manage_items_types), item_types_path %></li>
+    <li><%= link_to t(:manage_items), items_path %></li>
     <li><%=t :log_in %></li>
   </ul>
 </div>
