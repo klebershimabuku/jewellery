@@ -45,6 +45,12 @@ en:
   module_items: "Module: Items"
   no_item_found: "Ops! There are no item created yet. Maybe you wish to "
   btn_goto_items_root: "Go to Items Listing"
+  btn_update_values: "Update values"
+  btn_add_new_part: "+ Add a new part to this item"
+  btn_save_item: "Save Item"
+  label_picture: "Picture"
+  label_remove_picture: "Remove picture"
+  explanation_to_remove_picture: "Check this if you want to delete this picture"
 
   
   # About page

@@ -12,6 +12,8 @@
   <%= javascript_include_tag 'jquery.js', 'application.js', 'jquery_ujs.js','jquery-ui-1.8.15.custom.min.js','autocomplete-rails.js' %>
   <%= javascript_include_tag :on_the_spot %>
 	<%= csrf_meta_tag %>
+	
+	<%= yield(:head) %>
 </head>
 <body>
 
