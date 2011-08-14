@@ -34,6 +34,8 @@ GEM
       ZenTest (>= 4.4.1)
     autotest-standalone (4.5.5)
     builder (2.1.2)
+    carrierwave (0.5.7)
+      activesupport (~> 3.0)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -76,6 +78,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.9.2)
     rdoc (3.8)
+    rmagick (2.13.1)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -104,11 +107,13 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-standalone
+  carrierwave
   jquery-rails (~> 1.0.12)
   mysql2 (~> 0.2.6)
   on_the_spot
   rails (= 3.0.9)
   rails3-jquery-autocomplete (~> 0.9.1)
+  rmagick
   rspec
   rspec-rails
   webrat

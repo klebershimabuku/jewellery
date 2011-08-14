@@ -1,6 +1,5 @@
 <div class='nav_buttons'>
-  <%= link_to t(:back_to_home), root_path, :class => 'left button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
-  <%= link_to t(:btn_goto_items_root), items_path, :class => 'middle button' %>
+  <%= link_to t(:back_to_home), root_path, :class => 'left primary button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
   <%= link_to t(:btn_add), new_item_path, :class => 'positive right button' %>
 </div>
 
@@ -16,21 +15,28 @@
 
   <tr>
     <th>Title</th>
-    <th>Price</th>
-    <th>Labour cost</th>
-    <th>Item type</th>
-    <th></th>
-    <th></th>
+    <th>Price (HK$)</th>
+    <th>Type</th>
   </tr>
 
   <% @items.each do |item| %>
   <tr>
-    <td><%= on_the_spot_edit item, :title %></td>
+    <td>
+      <ul>
+        <li>
+          <%if item.photo? %>
+            <%= image_tag item.photo_url(:thumb) %>
+          <% else %>
+            <div id="no_photo">NO IMAGE</div>
+          <% end %>
+        </li>
+        <li><%= on_the_spot_edit item, :title %></li>
+        <li><%= link_to 'Edit', edit_item_path(item), :class => "left primary button" %><%= link_to "Show details", item_path(item) , :class => 'middle button'%><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :class => 'negative right button' %></li>
+        <li>Last update: <%= item.updated_at.strftime('%Y-%M-%d') %></li>
+      </ul>
+    </td>
     <td><%= display_current(item.price) %></td>
-    <td><%= on_the_spot_edit item, :labour_cost, :display_text => display_current(item.labour_cost) %></td>
     <td><%= on_the_spot_edit item, :item_type_id, :type => :select, :data => @item_types.collect { |p| [p.id, show_dashes_for_none(p.title) ] }, :callback => 'reload' %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <% end %>
   

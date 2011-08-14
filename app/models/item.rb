@@ -8,6 +8,8 @@ class Item < ActiveRecord::Base
   
   before_validation :fix_labour_cost, :if => :labour_cost_changed?
   
+  mount_uploader :photo, PhotoUploader
+  
   def save_id
     item_part_attributes = [ { :item_id => self.id } ]
   end

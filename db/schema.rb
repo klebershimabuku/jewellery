@@ -11,10 +11,14 @@
 # It's strongly recommended to check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110814075613) do
 =======
 ActiveRecord::Schema.define(:version => 20110811113854) do
 >>>>>>> item_module
+=======
+ActiveRecord::Schema.define(:version => 20110813212914) do
+>>>>>>> item_upload
 
   create_table "item_parts", :force => true do |t|
     t.integer  "item_id"
