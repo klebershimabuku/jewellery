@@ -6,7 +6,7 @@
 
 <ul id="search_results">
 <% @results.each do |result| %> 
-  <% if (params[:base] == 'part') %>
+  <% if (params[:base] == 'parts') %>
   <li><%= link_to result.title, part_path(result) %></li>
   <% else %>
   <li><%= link_to result.title, item_path(result) %></li>
