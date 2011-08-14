@@ -5,7 +5,7 @@ class Part < ActiveRecord::Base
   accepts_nested_attributes_for :item_parts, :allow_destroy => true
 
   before_validation :fix_set, :if => :set_changed?
-  
+    
   attr_reader :price
   
   def price
@@ -14,11 +14,7 @@ class Part < ActiveRecord::Base
   end
   
   def self.search(search)
-    if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
+    where("title LIKE ?", "%#{search}%")
   end
   
   protected

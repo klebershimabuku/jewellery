@@ -1,7 +1,9 @@
 <h1>Searching for "<%= params[:q] %>" in <i><%= params[:base] %></i> match <%= @results.size %> results.</h1>
 <hr>
+<div class="align_to_left"><%= paginate @results %></div>
 <% if !@results.blank? %>
-  
+
+
 <ul id="search_results">
 <% @results.each do |result| %> 
   <% if (params[:base] == 'part') %>
@@ -18,3 +20,5 @@
 <p>Try using other words.</p>
 
 <% end %>
+
+<div class="align_to_left"><%= paginate @results %></div>

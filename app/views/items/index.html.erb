@@ -3,6 +3,9 @@
   <%= link_to t(:btn_add), new_item_path, :class => 'positive right button' %>
 </div>
 
+<div class="align_to_center"><%= paginate @items %></div>
+
+<br />
 
 <div id="custom_table">
   <table class="default_table">
@@ -51,4 +54,5 @@
   
   </table>
   </div>
+  <div class="align_to_center"><%= paginate @items %></div>
 

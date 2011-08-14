@@ -4,10 +4,8 @@ class Item < ActiveRecord::Base
   has_many :parts, :through => :item_parts
   accepts_nested_attributes_for :item_parts, :allow_destroy => true, :reject_if => lambda { |a| a['part_id'].blank? }
   after_save :save_id
-  validates :title, :presence => true
-  
-  before_validation :fix_labour_cost, :if => :labour_cost_changed?
-  
+  validates :title, :presence => true  
+  before_validation :fix_labour_cost, :if => :labour_cost_changed?  
   mount_uploader :photo, PhotoUploader
   
   def save_id
@@ -15,11 +13,7 @@ class Item < ActiveRecord::Base
   end
   
   def self.search(search)
-    if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
+      where("title LIKE ?", "%#{search}%")
   end
   
   protected

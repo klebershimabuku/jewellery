@@ -7,7 +7,7 @@ class PartsController < ApplicationController
   # GET /parts.xml
   def index
     @part_types = PartType.all
-    @parts = Part.all
+    @parts = Part.order(:title).page params[:page]
   
     respond_to do |format|
       format.html # index.html.erb

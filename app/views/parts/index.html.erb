@@ -4,6 +4,9 @@
   <%= link_to t(:btn_add), new_part_path, :class => 'positive right button' %>
 </div>
 
+<div class="align_to_center"><%= paginate @parts %></div>
+<br />
+
 
 <div id="custom_table">
 <table class='default_table'>
@@ -37,5 +40,7 @@
   </tr>
 <% end %>
 </table>
-<%= link_to t(:btn_add), new_part_path, :class => 'positive pill big button' %>
-</div>
+  </div>
+
+<div class="align_to_center"><%= paginate @parts %></div>
+

@@ -11,6 +11,7 @@ gem 'on_the_spot'
 gem 'rails3-jquery-autocomplete' , '~> 0.9.1'
 gem 'carrierwave', :branch => 'master'
 gem 'rmagick'
+gem 'kaminari', '~> 0.12.4'
 
 group :development, :test do
   gem 'webrat'

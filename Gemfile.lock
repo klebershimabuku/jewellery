@@ -44,6 +44,8 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json_pure (1.5.3)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -109,6 +111,7 @@ DEPENDENCIES
   autotest-standalone
   carrierwave
   jquery-rails (~> 1.0.12)
+  kaminari (~> 0.12.4)
   mysql2 (~> 0.2.6)
   on_the_spot
   rails (= 3.0.9)

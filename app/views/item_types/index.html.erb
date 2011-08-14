@@ -1,3 +1,5 @@
+<div class="align_to_center"><%= paginate @item_types %></div>
+<br />
 <div id="custom_table">
   <table class="default_table" style="width: 30%">
     <tr>
@@ -28,7 +30,5 @@
     
   </table>
 </div>
+<div class="align_to_center"><%= paginate @item_types %></div>
 
-<br />
-
-<%= link_to t(:btn_add), new_item_type_path %>

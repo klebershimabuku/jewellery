@@ -5,7 +5,7 @@ class ItemTypesController < ApplicationController
   # GET /item_types
   # GET /item_types.xml
   def index
-    @item_types = ItemType.all
+    @item_types = ItemType.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
