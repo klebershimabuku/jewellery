@@ -6,11 +6,11 @@ class Part < ActiveRecord::Base
 
   before_validation :fix_set, :if => :set_changed?
   
-  attr_accessor :price
+  attr_reader :price
   
   def price
-    quotation = PartType.find(self.part_type_id).quotation
-    price = self.weight * quotation
+    return @price if (@price)
+    @price = PartType.find(self.part_type_id).quotation * self.weight
   end
   
   protected
