@@ -32,7 +32,7 @@
         </li>
         <li><%= on_the_spot_edit item, :title %></li>
         <li><%= link_to 'Edit', edit_item_path(item), :class => "left primary button" %><%= link_to "Show details", item_path(item) , :class => 'middle button'%><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :class => 'negative right button' %></li>
-        <li>Last update: <%= item.updated_at.strftime('%Y-%M-%d') %></li>
+        <li>Last update: <%= item.updated_at.strftime('%Y-%m-%d') %></li>
       </ul>
     </td>
     <td><%= display_current(item.price) %></td>
