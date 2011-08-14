@@ -1,9 +1,15 @@
 class ItemsController < ApplicationController
+  respond_to :html
 
   #on_the_spot for in place editing
   can_edit_on_the_spot  
   
   autocomplete :part, :title
+  
+  def search
+    @items = Item.search(params[:q])
+    respond_with @items
+  end
   
   # GET /items
   # GET /items.xml
