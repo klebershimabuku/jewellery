@@ -6,11 +6,6 @@ class ItemsController < ApplicationController
   
   autocomplete :part, :title
   
-  def search
-    @items = Item.search(params[:q])
-    respond_with @items
-  end
-  
   # GET /items
   # GET /items.xml
   def index

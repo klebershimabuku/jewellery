@@ -13,6 +13,14 @@ class Part < ActiveRecord::Base
     @price = PartType.find(self.part_type_id).quotation * self.weight
   end
   
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
   protected
     def fix_set
       if self[:set].nil?

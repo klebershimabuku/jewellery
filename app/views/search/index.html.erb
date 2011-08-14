@@ -1,0 +1,20 @@
+<h1>Searching for "<%= params[:q] %>" in <i><%= params[:base] %></i> match <%= @results.size %> results.</h1>
+<hr>
+<% if !@results.blank? %>
+  
+<ul id="search_results">
+<% @results.each do |result| %> 
+  <% if (params[:base] == 'part') %>
+  <li><%= link_to result.title, part_path(result) %></li>
+  <% else %>
+  <li><%= link_to result.title, item_path(result) %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<% else %>
+
+<p>Nothing found.</p>
+<p>Try using other words.</p>
+
+<% end %>

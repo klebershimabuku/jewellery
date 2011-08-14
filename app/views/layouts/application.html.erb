@@ -28,8 +28,9 @@
           <td class="align_to_left"><h1>KT Jewellery</h1></td>
           <td class="align_to_right">
           
-          <%= form_tag search_items_path, :method => 'get' do %>
+          <%= form_tag search_path, :method => 'get' do %>
             <%= text_field_tag :q , params[:q] %>
+            <%= select_tag :base, options_for_select( [ [ 'Items', 'items'], [ 'Parts', 'parts'] ], params[:base]) %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>
           

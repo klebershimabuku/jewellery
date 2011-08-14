@@ -1,5 +1,7 @@
 Jewellery::Application.routes.draw do
 
+  get "search/index"
+
   resources :parts, :item_types do
     collection do
       put :update_attribute_on_the_spot
@@ -10,7 +12,6 @@ Jewellery::Application.routes.draw do
     collection do
       put :update_attribute_on_the_spot
       get :autocomplete_part_title
-      get :search
     end
   end
 
@@ -19,7 +20,8 @@ Jewellery::Application.routes.draw do
       put :update_attribute_on_the_spot
     end
   end  
-
+  
+  get "search/index", :as => 'search'
   get "welcome/index", :as => 'home'
   match "about" => "welcome#about"
   match 'parts/:id/price' => 'parts#price', :as => :retrieve_part_price
