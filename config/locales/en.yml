@@ -17,6 +17,8 @@ en:
   manage_parts: "Manage Parts"
   manage_items_parts: "Manage Items Parts"
   manage_items: "Manage Items"
+  manage_users: "Manage Users"
+  manage_customers: "Manage Customers"
   log_in: "Log In"
   
   # Navigation bar
