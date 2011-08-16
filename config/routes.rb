@@ -1,5 +1,7 @@
 Jewellery::Application.routes.draw do
 
+  resources :customers
+
   get "search/index"
 
   resources :parts, :item_types do
