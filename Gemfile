@@ -12,6 +12,7 @@ gem 'rails3-jquery-autocomplete' , '~> 0.9.1'
 gem 'carrierwave', :branch => 'master'
 gem 'rmagick'
 gem 'kaminari', '~> 0.12.4'
+gem 'devise'
 
 group :development, :test do
   gem 'webrat'
