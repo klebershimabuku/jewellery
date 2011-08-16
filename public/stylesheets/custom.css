@@ -178,3 +178,5 @@ legend, #IE8#HACK {margin-top:0;margin-bottom:0;}
 .red { background-color: red; }
 
 #no_photo { background-color: #EFEFEF; width: 200px; height: 100px; padding-top: 40%; }
+
+.show_data { font-size: 1.6em; }
