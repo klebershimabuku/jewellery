@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110816035131) do
+=======
+ActiveRecord::Schema.define(:version => 20110816073721) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "person_in_charge_name"
+    t.string   "person_in_charge_position"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "address"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> customers
 
   create_table "item_parts", :force => true do |t|
     t.integer  "item_id"

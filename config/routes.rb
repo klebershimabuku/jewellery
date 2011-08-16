@@ -2,6 +2,8 @@ Jewellery::Application.routes.draw do
 
   devise_for :users
 
+  resources :customers
+
   get "search/index"
 
   resources :parts, :item_types do
