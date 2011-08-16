@@ -10,7 +10,8 @@ class Part < ActiveRecord::Base
   
   def price
     return @price if (@price)
-    @price = PartType.find(self.part_type_id).quotation * self.weight
+    self.set = 0 if self.set.nil?
+    @price = PartType.find(self.part_type_id).quotation * self.weight + self.set
   end
   
   def self.search(search)
