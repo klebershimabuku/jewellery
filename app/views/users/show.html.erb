@@ -1,0 +1,11 @@
+<h1>User</h1>
+
+<p>Name: <%= @user.name %></p>
+
+<p>E-mail: <%= @user.email %></p>
+
+<p>
+<%= link_to "Edit", edit_user_path %> | 
+<%= link_to "Back to users listing", users_path %> | 
+<%= link_to "Delete", user_path(@user), :method => :delete, :confirm => "Are you sure?" %>
+</p>
