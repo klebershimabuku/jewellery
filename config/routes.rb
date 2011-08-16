@@ -1,6 +1,8 @@
 Jewellery::Application.routes.draw do
 
   devise_for :users
+  
+  resources :users, :controller => "users"
 
   resources :customers
 
