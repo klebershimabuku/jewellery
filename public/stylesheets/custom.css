@@ -31,6 +31,7 @@ body {
 #header .nav ul {
 	margin-left: -15px;
 }
+#header .nav ul li:first-child { margin-left: -10px; }
 #header .nav ul li { 
     display: inline-block;
     padding-right: 10px;
@@ -38,6 +39,28 @@ body {
 #search {
 	float: right;
 }
+#sidebar {
+	float: left;
+	padding: 20px;
+	font-size: 1.7em;
+}
+
+#member_area {
+	background-color: #DDD;
+	margin-bottom: 30px;
+	padding: 10px;
+}
+  #member_area h4 { border-bottom: 1px solid #000; }
+
+#tasks {
+	padding: 10px;
+	background-color: #EFEFEF;
+}
+  #tasks h4 { border-bottom: 1px solid #000; }
+  #tasks ul { list-style: none; }
+  #tasks ul li { padding: 20px; }
+
+
 #contents {
 	margin-right: 100px;
 }
@@ -53,19 +76,6 @@ body {
 	margin:0 auto;
 	text-align: center;
 	margin-bottom: 30px;
-}
-.tasks {
-	float: left;
-	position: relative;
-	top: -200px;
-	background-color: #EFEFEF;
-	padding: 20px;
-	font-size: 1.7em;
-}
-.tasks h1 { font-size: 16px; }
-
-.tasks ul li {
-	padding-top: 20px;
 }
 
 .default_table {
