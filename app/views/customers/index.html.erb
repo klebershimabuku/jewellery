@@ -1,25 +1,37 @@
 <h1>Listing customers</h1>
 
+<% if can? :create, Customer %>
 <p>
   <%= link_to 'New Customer', new_customer_path, :class => 'pill button positive' %>
 </p>
+<% end %>
 
 <table class="default_table">
   <tr>
     <th>Name</th>
     <th>Person in charge name</th>
-    <th>Position of person in charge</th>
+    <th>Person in charge position</th>
     <th>Phone</th>
     <th>Fax</th>
     <th>Email</th>
     <th>Address</th>
     <th>Notes</th>
+    
+    <% if can? :destroy, Customer %>
     <th></th>
+    <% end %>
+    
   </tr>
 
 <% @customers.each do |customer| %>
   <tr>
+  
+    <% if can? :edit, Customer %>
     <td><%= link_to customer.name, edit_customer_path(customer) %></td>
+    <% else %>
+    <td><%= customer.name %></td>
+    <% end %>
+    
     <td><%= customer.person_in_charge_name %></td>
     <td><%= customer.person_in_charge_position %></td>
     <td><%= customer.phone %></td>
@@ -27,7 +39,11 @@
     <td><%= customer.email %></td>
     <td><%= customer.address %></td>
     <td><%= customer.notes %></td>
-    <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <% if can? :destroy, Customer %>
+    <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete, :class => 'negative pill button' %></td>
+    <% end %>
+    
   </tr>
 <% end %>
 </table>

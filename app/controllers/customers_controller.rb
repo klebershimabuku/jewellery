@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+  
+  load_and_authorize_resource #cancan
+    
   # GET /customers
   # GET /customers.xml
   def index

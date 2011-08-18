@@ -1,14 +1,10 @@
-<div class='nav_buttons'>
-  <%= link_to t(:back_to_home), root_path, :class => 'left button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
-  <%= link_to t(:btn_goto_parts_root), parts_path, :class => 'middle button' %>
-  <%= link_to t(:btn_add), new_part_path, :class => 'positive right button' %>
-</div>
-
-<div class="align_to_center"><%= paginate @parts %></div>
-<br />
-
-
 <div id="custom_table">
+<% if can? :create, Part %>
+<p>
+  <%= link_to t(:btn_add), new_part_path, :class => 'big positive right button' %>
+</p>
+<% end %>
+<div class="align_to_center"><%= paginate @parts %></div>
 <table class='default_table'>
   <tr>
     <th colspan='7'><%=t :module_parts %></th>
@@ -21,7 +17,9 @@
     <th>Price (HK$)</th>
     <th>Type</th>
     <th>Updated</th>
+    <% if can? :destroy, Part %>
     <th></th>
+    <% end %>
   </tr>
 <% @parts.each do |part| %>
   <tr>
@@ -31,7 +29,9 @@
     <td><%= display_current(part.price) %></td>
     <td><%= on_the_spot_edit part, :part_type_id, :type => :select, :data => @part_types.collect { |p| [p.id, show_dashes_for_none(p.title) ] }, :callback => 'reload' %></td>
     <td><%= part.updated_at.strftime('%Y-%B-%d %H:%M') %></td>
+    <% if can? :destroy, Part %>
     <td><%= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete, :class => 'negative pill button' %></td>
+    <% end %>
   </tr>
 <% end %>
 <% else %>
@@ -40,7 +40,7 @@
   </tr>
 <% end %>
 </table>
-  </div>
+</div>
 
 <div class="align_to_center"><%= paginate @parts %></div>
 

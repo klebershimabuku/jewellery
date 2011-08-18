@@ -1,14 +1,32 @@
 class UsersController < ApplicationController
+  
+  load_and_authorize_resource
+  
   def index
     @users = User.page params[:page]
   end
   
   def new
     @user = User.new
+    if user_signed_in?
+      if current_user.role == "admin"
+        @roles = %w[user manager]
+      elsif current_user.role == "manager"
+        @roles = 'user'
+      end
+    end
   end
   
   def edit
     @user = User.find(params[:id])
+    if user_signed_in?
+      if current_user.role == "admin"
+        @roles = %w[manager user]
+      elsif current_user.role == "manager"
+        @roles = 'user'
+      end
+    end
+
   end
   
   def show
@@ -16,7 +34,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(params[:user])
+    @user = User.create(params[:user])
+    
+    if user_signed_in?
+      if current_user.role == "admin"
+        @roles = %w[manager user]
+      elsif current_user.role == "manager"
+        @roles = 'user'
+      end
+    end
+    
 
     respond_to do |format|
       if @user.save

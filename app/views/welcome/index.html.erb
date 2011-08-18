@@ -2,11 +2,11 @@
 
   <div id="member_area">
 
-  <h4>Member area:</h4>
+  <h4>Members:</h4>
 
   <% if user_signed_in? %>
-    <p>Welcome <%= current_user.name %><br />
-    <%= link_to "Log out", destroy_user_session_path, :method => :delete %></p>
+    <p>Welcome <b><%= current_user.name %></b><br />
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => 'pill button negative' %></p>
   <% else %>
     <%= render "devise/sessions/new_from_home" %>
 
@@ -14,7 +14,7 @@
 
   </div>
 
-
+  <% if user_signed_in? %>
   <div id="tasks">
     <h4><%=t :what_do_you_want_to_do %></h4>
     <ul>
@@ -22,10 +22,13 @@
       <li><%= link_to t(:manage_parts), parts_path %></li>
       <li><%= link_to t(:manage_items_types), item_types_path %></li>
       <li><%= link_to t(:manage_items), items_path %></li>
-      <li><%= link_to t(:manage_users), users_path %></li>
       <li><%= link_to t(:manage_customers), customers_path %></li>
+      <% if can? :read, User %>
+      <li><%= link_to t(:manage_users), users_path %></li>
+      <% end %>
     </ul>
   </div>
+  <% end %>
   
 </div>
 

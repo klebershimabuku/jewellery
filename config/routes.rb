@@ -4,8 +4,8 @@ Jewellery::Application.routes.draw do
   
   resources :users, :controller => "users"
 
-  resources :customers
-
+  resources :customers 
+  
   get "search/index"
 
   resources :parts, :item_types do

@@ -10,10 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110816035131) do
-=======
-ActiveRecord::Schema.define(:version => 20110816073721) do
+ActiveRecord::Schema.define(:version => 20110817130415) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -27,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20110816073721) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
->>>>>>> customers
 
   create_table "item_parts", :force => true do |t|
     t.integer  "item_id"
@@ -83,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20110816073721) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

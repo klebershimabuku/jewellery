@@ -5,7 +5,6 @@ class Part < ActiveRecord::Base
   accepts_nested_attributes_for :item_parts, :allow_destroy => true
 
   before_validation :fix_set, :if => :set_changed?
-    
   attr_reader :price
   
   def price

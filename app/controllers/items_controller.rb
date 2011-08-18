@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  
+  load_and_authorize_resource :except => :update_attribute_on_the_spot
+  
   respond_to :html
 
   #on_the_spot for in place editing

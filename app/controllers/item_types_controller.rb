@@ -1,4 +1,7 @@
 class ItemTypesController < ApplicationController
+  
+  load_and_authorize_resource :except => :update_attribute_on_the_spot#cancan
+  
   #on_the_spot for in place editing
   can_edit_on_the_spot
 

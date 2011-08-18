@@ -1,11 +1,8 @@
-<div class='nav_buttons'>
-  <%= link_to t(:back_to_home), root_path, :class => 'left primary button' if params[:controller] != 'welcome' || params[:controler] != 'welcome' && params[:action] != 'index' %>
-  <%= link_to t(:btn_add), new_item_path, :class => 'positive right button' %>
-</div>
+<% if can? :create, Item %>
+<p><%= link_to t(:btn_add), new_item_path, :class => 'positive big button' %></p>
+<% end %>
 
 <div class="align_to_center"><%= paginate @items %></div>
-
-<br />
 
 <div id="custom_table">
   <table class="default_table">
@@ -34,8 +31,10 @@
           <% end %>
         </li>
         <li><%= on_the_spot_edit item, :title %></li>
+        <% if can? :destroy, Item %>
         <li><%= link_to 'Edit', edit_item_path(item), :class => "left primary button" %><%= link_to "Show details", item_path(item) , :class => 'middle button'%><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :class => 'negative right button' %></li>
         <li>Last update: <%= item.updated_at.strftime('%Y-%m-%d') %></li>
+        <% end %>
       </ul>
     </td>
     <td><%= display_current(item.price) %></td>

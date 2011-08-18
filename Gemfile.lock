@@ -35,6 +35,7 @@ GEM
     autotest-standalone (4.5.5)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    cancan (1.6.5)
     carrierwave (0.5.7)
       activesupport (~> 3.0)
     devise (1.4.2)
@@ -117,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-standalone
+  cancan
   carrierwave
   devise
   jquery-rails (~> 1.0.12)

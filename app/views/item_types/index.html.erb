@@ -1,5 +1,4 @@
 <div class="align_to_center"><%= paginate @item_types %></div>
-<br />
 <div id="custom_table">
   <table class="default_table" style="width: 30%">
     <tr>
@@ -12,7 +11,9 @@
     <% @item_types.each do |item_type| %>
     <tr>
       <td><%= on_the_spot_edit item_type, :title %>
+      <% if can? :destroy, ItemType %>
       <%= link_to 'Destroy', item_type, :confirm => 'Are you sure?', :method => :delete, :class => 'float_to_right negative pill button' %></td>
+      <% end %>
     </tr>
     <% end %>
     <% else %>
@@ -21,11 +22,13 @@
     </tr>
     <% end %>
     
+    <% if can? :create, ItemType %>
     <%= form_for(@item_type, :as => :item_type, :url => { :action => 'create'}) do |f| %>
       <tr>
         <td><%= f.text_field :title %>
         <%= button_for "Save Item Type", :class => 'big positive pill button', :button_type => 'submit' %></td>
       </tr>
+    <% end %>
     <% end %>
     
   </table>

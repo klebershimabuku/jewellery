@@ -1,5 +1,7 @@
 class PartsController < ApplicationController
   #on_the_spot for in place editing
+  load_and_authorize_resource  :except => [ :update_attribute_on_the_spot, :price ]
+  
   helper :all
   
   can_edit_on_the_spot  # GET /parts

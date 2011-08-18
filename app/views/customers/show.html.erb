@@ -1,6 +1,11 @@
 <div class='show_data'>
 
 <p>
+<%= link_to t(:btn_back_to_customers), customers_path, :class => 'left primary middle button' %><% if can? :edit, @customer %><%= link_to t(:btn_edit), edit_customer_path(@customer), :class => 'middle primary button' %><% end %><% if can? :destroy, @customer %><%= link_to t(:btn_destroy), customer_path(@customer), :method => :destroy, :confirm => "Are you sure?", :class => "right button" %><% end %>
+</p>
+
+
+<p>
   <b>Name:</b>
   <%= @customer.name %>
 </p>
@@ -39,9 +44,5 @@
   <b>Notes:</b>
   <%= @customer.notes %>
 </p>
-
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
 
 </div>
