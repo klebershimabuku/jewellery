@@ -8,8 +8,10 @@
 <% @results.each do |result| %> 
   <% if (params[:base] == 'parts') %>
   <li><%= link_to result.title, part_path(result) %></li>
-  <% else %>
+  <% elsif (params[:base] == 'items') %>
   <li><%= link_to result.title, item_path(result) %></li>
+  <% else %>
+  <li><%= link_to result.name, customer_path(result) %></li>
   <% end %>
 <% end %>
 </ul>

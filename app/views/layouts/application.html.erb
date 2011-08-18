@@ -30,7 +30,7 @@
           
           <%= form_tag search_path, :method => 'get' do %>
             <%= text_field_tag :q , params[:q] %>
-            <%= select_tag :base, options_for_select( [ [ 'Items', 'items'], [ 'Parts', 'parts'] ], params[:base]) %>
+            <%= select_tag :base, options_for_select( [ [ 'Items', 'items'], [ 'Parts', 'parts'], ['Customers', 'customers'] ], params[:base]) %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>
           
