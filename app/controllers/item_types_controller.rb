@@ -8,7 +8,7 @@ class ItemTypesController < ApplicationController
   # GET /item_types
   # GET /item_types.xml
   def index
-    @item_types = ItemType.page params[:page]
+    @item_types = ItemType.order('updated_at DESC').page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

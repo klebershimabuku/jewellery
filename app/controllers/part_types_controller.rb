@@ -10,7 +10,7 @@ class PartTypesController < ApplicationController
   # GET /part_types
   # GET /part_types.xml
   def index
-    @part_types = PartType.page params[:page]
+    @part_types = PartType.order('updated_at DESC').page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

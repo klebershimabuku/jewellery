@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.order(:title).page params[:page]
+    @items = Item.order('updated_at DESC').page params[:page]
     @item_types = ItemType.all
     respond_to do |format|
       format.html # index.html.erb
