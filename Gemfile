@@ -14,6 +14,7 @@ gem 'rmagick'
 gem 'kaminari', '~> 0.12.4'
 gem 'devise'
 gem 'cancan'
+gem 'prawn', :git => "git://github.com/sandal/prawn.git", :tag => '0.10.2', :submodules => true
 
 group :development, :test do
   gem 'webrat'

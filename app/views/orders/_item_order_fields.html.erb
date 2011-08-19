@@ -1,0 +1,13 @@
+<tr class='individual_part'>
+  <td>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to_remove_fields "X remove", f %>&nbsp;
+    <% if !f.object.item.blank? %>
+    <%= f.autocomplete_field :autocomplete_item_title, autocomplete_item_title_orders_path, :id_element => "#order_autocomplete", :value => f.object.item.title %>
+    <% else %>
+    <%= f.autocomplete_field :autocomplete_item_title, autocomplete_item_title_orders_path, :id_element => "#order_autocomplete" %>
+    <% end %>
+    <%= f.hidden_field :item_id, :id => "order_autocomplete" , :class => 'order_autocomplete' %>
+  </td>
+  <td class="align_to_center"><%= f.text_field :quantity , :size => 5, :class => "quantity" %></td>
+</tr>

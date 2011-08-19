@@ -1,0 +1,13 @@
+defaults: &defaults
+  company_name: "KT Jewellery Co Ltd"
+  company_address: "Unit, 7/F., China Insurance Building, 48 Cameron Road, Tsim Sha Tui, Kowloon, Hong Kong"
+  company_details: "Tel: (852) 2126 7879 - Fax: (852) 2126 7876 - E-mail: candy@ktjewellery.com - Candy Wong   (Sales Manager)"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

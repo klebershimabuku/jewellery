@@ -1,0 +1,25 @@
+<h1>Listing orders</h1>
+
+<p><%= link_to 'New Order', new_order_path, :class => 'positive button' %></p>
+
+<div class="align_to_center"><%= paginate @orders %></div>
+
+<table class="default_table">
+  <tr>
+    <th>#</th>
+    <th>Customer Name</th>
+    <th>Items</th>
+    <th>Create Date</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= link_to order.id, order %></td>
+    <td class="align_to_left"><%= order.customer.name %></td>
+    <td class="align_to_left"><%= order.items.map(&:title).join(", ") %></td>
+    <td><%= order.created_at.strftime("%Y-%B-%d at %H:%M:%S") %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class="align_to_center"><%= paginate @orders %></div>

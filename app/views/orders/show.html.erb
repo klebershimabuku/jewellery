@@ -1,0 +1,49 @@
+<%= link_to t(:btn_back_to_orders), orders_path %>
+
+<p class='fontsize16'>
+  <p class="fontsize18">Order Nro. # <%= @order.id %></p>
+  
+  <fieldset class="fifty">
+  <legend>Customer Details:</legend>
+  <table class="order_table">
+    <tr>
+      <td class="bold" style="width: 20%;">Customer Name</td>
+      <td class="align_to_left"><%= @order.customer.name %></td>
+    </tr>
+    <tr>
+      <td class="bold">Address</td>
+      <td class="align_to_left"><%= @order.customer.address %></td>
+    </tr>
+  </table>
+  </fieldset>
+  
+  
+</p>
+
+<fieldset class="fifty">
+<legend>Order details:</legend>
+
+  <table class="order_table">
+  <tr>
+    <th>Item Name</th>
+    <th>Qty</th>
+    <th>Unit Price (HK$)</th>
+    <th>Amount</th>
+  </tr>
+  <% @order.item_orders.each do |oitem| %>
+  <tr class="<%= cycle :odd, :even %>">
+    <td><%= oitem.item.title %></td>
+    <td><%= oitem.quantity %></td>
+    <td><%= number_to_currency(oitem.item.price,:unit => 'HK$ ') %></td>
+    <td><%= number_to_currency(oitem.full_price, :unit => 'HK$ ') %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td colspan="4" class="total_price">Total: <%= number_to_currency(@order.total_price, :unit => 'HK$ ') %></td>
+  </tr>
+  </table>
+
+</fieldset>
+
+<%= link_to t(:btn_edit), edit_order_path(@order), :class => 'button' %> or
+<%= image_tag "print-icon.png"%><%= link_to t(:generate_printable_invoice), order_path(@order, :format => :pdf) %>

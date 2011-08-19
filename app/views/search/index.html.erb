@@ -10,8 +10,10 @@
   <li><%= link_to result.title, part_path(result) %></li>
   <% elsif (params[:base] == 'items') %>
   <li><%= link_to result.title, item_path(result) %></li>
-  <% else %>
+  <% elsif (params[:base] == 'customers') %>
   <li><%= link_to result.name, customer_path(result) %></li>
+  <% else %>
+  <li><%= link_to "Order Nro. #{result.id}", order_path(result) %></li>
   <% end %>
 <% end %>
 </ul>

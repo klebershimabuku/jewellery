@@ -84,12 +84,27 @@ body {
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
-	border: 0px solid #ccc;
+	border: 0px solid #EEE;
 	font-size: 1.7em;
 	border-spacing: 1pt;
 	background-color: #ccc;
 	margin-bottom: 30px;
 }
+.order_table {
+	width: 100%;
+	text-align: center;
+	border: 0px solid #ccc;
+	margin: 0;
+	font-size: 1.2em;
+	border-spacing: 1pt;
+	background-color: #ccc;
+}
+  .order_table tr th { background-color: #707577; text-align: center; color: #FFF }
+  .order_table tr td { padding: 5px; }
+  .order_table tr.odd td { background-color: #EEE; }
+  .order_table tr.even td { background-color: #FFF; }
+  .order_table tr td.total_price { font-weight: bold; text-align: right; padding-right: 30px; }
+
 table tr td { 
 	background-color: #FFF;
 	padding: 10px;
@@ -136,6 +151,17 @@ table.default_table tr td ul li:last-child { font-size: small; margin-top: 20px;
 .align_to_left { text-align: left; }
 .align_to_center { text-align: center; }
 .clear { clear: both; }
+.fontsize10 { font-size: 10px; }
+.fontsize11 { font-size: 11px; }
+.fontsize12 { font-size: 12px; }
+.fontsize13 { font-size: 13px; }
+.fontsize14 { font-size: 14px; }
+.fontsize15 { font-size: 15px; }
+.fontsize16 { font-size: 16px; }
+.fontsize17 { font-size: 17px; }
+.fontsize18 { font-size: 18px; }
+.fontsize19 { font-size: 19px; }
+.fontsize20 { font-size: 20px; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -176,10 +202,16 @@ fieldset {padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
 legend {font-weight:normal;font-size:1.8em;margin-top:-0.2em;margin-bottom:1em;}
 fieldset, #IE8#HACK {padding-top:1.4em;}
 legend, #IE8#HACK {margin-top:0;margin-bottom:0;}
-
+.submit { display: inline-block; padding: 5px; font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 12px; color: #3C3C3D; text-shadow: 1px 1px 0 #FFFFFF; background: #ECECEC url('../images/css3buttons_backgrounds.png') 0 0 no-repeat; white-space: nowrap; overflow: visible; cursor: pointer; text-decoration: none; border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; outline: none; position: relative; zoom: 1; line-height: 1.11; *display: inline; *vertical-align: middle; }
+.submit:hover {
+	cursor: pointer;
+    color: #FFFFFF; border-color: #388AD4; text-decoration: none; text-shadow: -1px -1px 0 rgba(0,0,0,0.3); background-position: 0 -40px; background-color: #2D7DC5;
+}
 .red { background-color: red; }
 
 #no_photo { background-color: #EFEFEF; width: 200px; height: 100px; padding-top: 40%; }
 
 .show_data { font-size: 1.6em; }
 nav.pagination { font-size: 1.5em; margin-bottom: 10px; }
+.bold { font-weight: bold; }
+.fifty { width: 50%; }

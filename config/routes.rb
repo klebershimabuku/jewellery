@@ -1,5 +1,12 @@
 Jewellery::Application.routes.draw do
 
+  resources :orders do
+    collection do
+      get :autocomplete_customer_name
+      get :autocomplete_item_title
+    end
+  end
+
   devise_for :users
   
   resources :users, :controller => "users"

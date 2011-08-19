@@ -1,0 +1,45 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_id , "Customer Name"%><br />
+    <% if !f.object.customer.blank? %>
+    <%= f.autocomplete_field :autocomplete_customer_name, autocomplete_customer_name_orders_path, :id_element => '#order_customer_id' , :value => f.object.customer.name%><br />
+    <% else %>
+    <%= f.autocomplete_field :autocomplete_customer_name, autocomplete_customer_name_orders_path, :id_element => '#order_customer_id' %><br />
+    <% end %>
+    <%= f.hidden_field :customer_id %>
+    
+    <table style="width: 50%; margin: 0;" class="default_table" id="parts_table">
+      <tr class="attributes">
+        <th>Item Name</th>
+        <th>Quantity</th>
+      </tr>
+    <%= f.fields_for :item_orders do |items_form| %>
+      <%= render 'item_order_fields', :f => items_form %>
+    <% end %>
+    </table>
+    <br />
+    <div class="align_to_right" style="width: 50%;"><%= link_to_add_fields t(:btn_add_new_item), f, :item_orders, :class => 'pill button add_child' %></div>
+    
+    
+    
+  </div>
+  <div class="actions">
+    <% if ["edit","update"].include? params[:action] %>
+      <%= f.submit "Update Order",  :class => 'submit' %>
+    <% else %>
+      <%= f.submit "Create Order", :class => 'submit' %>
+    <% end %>
+  </div>
+<% end %>

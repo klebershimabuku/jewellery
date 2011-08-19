@@ -19,6 +19,7 @@ en:
   manage_items: "Manage Items"
   manage_users: "Manage Users"
   manage_customers: "Manage Customers"
+  manage_order: "Manage Orders"
   log_in: "Log In"
   
   # Navigation bar
@@ -64,6 +65,11 @@ en:
   
   # Module Customers
   btn_back_to_customers: "← Back to Customers List"
+  
+  # Module Orders
+  btn_add_new_item: "Add New Item"
+  btn_back_to_orders:  "← Back to Orders List"
+  generate_printable_invoice: " Generate Printable Invoice"
 
 
   

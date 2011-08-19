@@ -8,8 +8,10 @@ class SearchController < ApplicationController
       @results = Item.search(@q).page params[:page]
     elsif @base == 'parts'
       @results = Part.search(@q).page params[:page]
-    else
+    elsif @base == 'customers'
       @results = Customer.search(@q).page params[:page]
+    else
+      @results= Order.search(@q).page params[:page]
     end
     respond_with(@results)
   end

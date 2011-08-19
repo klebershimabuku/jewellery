@@ -28,7 +28,12 @@ function add_fields(link, association, content) {
 			random_id = Math.floor(Math.random()*1000);
 			$(this).attr("id", "autocomplete_" + random_id);
 			$(this).prev().attr("data-id-element", "#autocomplete_" + random_id);
-	});
+   	  });
+	  $(".order_autocomplete").each(function() {
+			random_id = Math.floor(Math.random()*1000);
+			$(this).attr("id", "order_autocomplete_" + random_id);
+			$(this).prev().attr("data-id-element", "#order_autocomplete_" + random_id);
+   	  });
 
 }
 
@@ -64,9 +69,17 @@ jQuery(function($) {
 			new_id = Math.floor(Math.random()*1000);
 			$(this).attr("id", "autocomplete_" + new_id);
 			$(this).prev().attr("data-id-element", "#autocomplete_" + new_id);
-		});
+		});		
 		
 		},10);
+
+
+		  $(".order_autocomplete").live("blur", function() {
+			new_id = Math.floor(Math.random()*1000);
+			$(this).attr("id", "autocomplete_" + new_id);
+			$(this).next().attr("data-id-element", "#autocomplete_" + new_id);
+		});		
+
 		
 		$("input[data-id-element^=#autocomplete]").live("blur", function(ev) {
 			ev.preventDefault();

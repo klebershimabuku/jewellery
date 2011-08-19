@@ -6,6 +6,8 @@ class Customer < ActiveRecord::Base
   validates :email, :presence => true, :email => true
   validates :address, :presence => true
   
+  has_many :orders
+  
   def self.search(search)
       where("name LIKE ?", "%#{search}%")
   end
